@@ -1,63 +1,119 @@
-*{
-    margin: 0;
+* {
     padding: 0;
+    margin: 0;
     box-sizing: border-box;
 }
-
-body{
- margin: 20px;
- background: #f4f4f4;
- line-height: 1.6;
+body {
+    margin: 20px;
+    background: #d8df99;
+    line-height: 1.6;
 }
-.faq-container{
+h1 {
+    color: rgb(255, 255, 255);
+     animation: animacao-titulo 8s infinite linear;
+}
+h1 img{
+    width: 200px;
+    height: 200px;
+}
+.faq-container {
     width: 800px;
     margin: 30px auto;
-    background: #fff;
+    background: #ffffff;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, .3);
+    animation: iniciar-faq 1s;
 }
-.faq-item{
+.faq-item {
     margin-bottom: 15px;
-    border: 1px solid #ddd;
- border-radius: 8px;
- overflow: hidden;
+    border: 1px solid #dcdf3d;
+    border-radius: 8px;
+    overflow: hidden;
 }
-.faq-pergunta{
+.faq-pergunta {
     cursor: pointer;
-    background: #007bff;
+    background: #759113;
     color: #fff;
-    padding: 15px 40px 15px;
+    padding: 15px 40px;
     position: relative;
     font-weight: 700;
-  
-  /*  display: block; tira o excesso */
-
-
+    font-size: 20px;
+    /* display: block; */
 }
-/* remove o marcador padrao permitindo que adicione seu proprio marcador*/
-.faq-pergunta::marker{
+/* Remove o marcador padrão, permitinddo que adicione seu próprio marcador */
+.faq-pergunta::marker {
     content: "";
 }
-
-.faq-pergunta::before{
+/* Adiciona o ícone de + inicial */
+.faq-pergunta::before {
     content: "+";
     position: absolute;
-    inset-inline-end: 15px; /* joga pro final */
-    transition: transform 0.3s ease; /* efeito de entrada e saida, suave*/
+    inset-inline-end: 15px;
+    transition: transform 0.3 ease;
     font-size: 1.2rem;
-}
 
-.faq-item[open] .faq-pergunta::before{
+}
+/* Muda o ícone para - quando estiver aberto */
+.faq-item[open] .faq-pergunta::before {
     content: "-";
     transform: rotate(180deg);
-
 }
-.faq-resposta{
+.faq-resposta {
     padding: 15px;
-    background: #ccc;
-    border-top: 10px solid #eee;
-    color: #000;
+    background: #e3e9a9;
+    color: #7e7d36;
+    font-size: 20px;
+}
+.faq-item[open] .faq-resposta {
+    border-top: 10px solid #ffffff;
+    animation: abrir-faq 2s;
+}
+@keyframes animacao-titulo {
+    0% {
+
+        margin-left: -10%;
+    }
+    20% {
+
+    }
+    40% {
+
+    }
+    60% {
+    }
+    80% {
+    }
+    100% {
+        margin-left: 110%;
+    }
+}
+@keyframes iniciar-faq {
+    from {
+        margin-left: -100%;
+    }
+    to {
+        margin-left: 22.5%;
+    }
+}
+@keyframes abrir-faq {
+    0% {
+        opacity: 0;
+        transform: translateX(-500px);
+        border-top-width: 0px;
+    }
+    50% {
+        opacity: 1;
+        transform: translateX(0);
+        border-top-width: 0px;
+    }
+    100% {
+        border-top-width: 10px;
+    }
 }
 
-/*pag1*/
+#Elenco{
+    color: #006437;
+    font-weight: bold;
+    cursor: pointer;
+}
